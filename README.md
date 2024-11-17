@@ -7,7 +7,7 @@
 
 - 🔭 I’m currently working on **gym management project**
 
-- 🌱 I’m currently learning **Django**
+- 🌱 I’m currently learning **Django, Dart and Flutter**
 
 - 👯 I’m looking to collaborate on **any intermediate projects**
 
@@ -22,8 +22,7 @@
 - 📫 How to reach me **https://www.linkedin.com/in/puoch-mabor-makuei-490252320/**
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/puoch-mabor-makuei-490252320/](https://www.linkedin.com/in/puoch-mabor-makuei-490252320/)
-
-- ⚡ Fun fact **I still don't know how to swim**
+- 
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
