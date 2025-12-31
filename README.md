@@ -1,58 +1,123 @@
-<h1 align="center">Hey there 👋, I'm Puoch Mabor Makuei</h1>
-<h3 align="center">Computer Science Student | Developer | Lifelong Learner</h3>
+<!-- ========================= -->
+<!-- 🚀 GITHUB PROFILE README -->
+<!-- ========================= -->
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=puoch1of1&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=28&pause=1000&color=38BDF8&center=true&vCenter=true&width=800&lines=Hi%2C+I'm+Puoch+Mabor+Makuei;I+build+with+Data%2C+AI+%26+Code;Turning+Ideas+Into+Systems" />
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212749443-6a87c0b8-7b2f-4d5f-9d4a-64bfa5b6c5d4.gif" width="700"/>
 </p>
 
 ---
 
-🌍 **About Me**
+## 🧠 About Me
 
-- 🎓 I'm a Computer Science student at **Uganda Christian University**  
-- 🔭 Currently building a **Gym Management System**  
-- 🌱 Exploring **Django**, **Dart**, and **Flutter**  
-- 🤝 Open to collaborations on **intermediate-level projects**  
-- 💡 Always curious to learn and grow through building  
+<table>
+<tr>
+<td width="60%">
 
-📫 **Reach Out**  
-- LinkedIn: [puoch-mabor-makuei](https://www.linkedin.com/in/puoch-mabor-makuei-490252320/)  
-- GitHub: [@puoch1of1](https://github.com/puoch1of1)  
-- Kaggle: [@puochmabormakuei](https://www.kaggle.com/puochmabormakuei)
+I’m **Puoch Mabor Makuei**, a Computer Science student and builder from **South Sudan 🇸🇸**, currently based in Uganda.
 
-💬 **Ask me about**  
-- C, Python, JavaScript — happy to chat or help where I can!
+I specialize in **Data Science, AI systems, and modern web technologies**—the kind that turn raw chaos into structured intelligence.
 
-📝 **I sometimes write on**  
-- [LinkedIn Articles](https://www.linkedin.com/in/puoch-mabor-makuei-490252320/)
+I care deeply about:
+- Building systems that *actually work*
+- Clean architecture over clever hacks
+- Using technology to solve **African-scale problems**
+
+I believe code is a thinking tool.  
+Bad code confuses computers.  
+Great code clarifies reality.
+
+</td>
+<td width="40%" align="center">
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3o5d2w3aGJ3ZWNtZ3g3dHh2b2M5cTR2dG5qaXN1aG1tZGF3bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xT9IgzoKnwFNmISR8I/giphy.gif" width="250"/>
+
+</td>
+</tr>
+</table>
 
 ---
 
-<h3 align="center">⚒️ Tech Stack</h3>
-<p align="center">
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="40" /></a>
-  <a href="#"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" /></a>
+## 🛠 Tech Stack & Tools
+
+### Languages & Core Tech
+<p>
+  <img src="https://skillicons.dev/icons?i=python,js,sql,html,css,dart" />
+</p>
+
+### Frameworks & Libraries
+<p>
+  <img src="https://skillicons.dev/icons?i=react,nodejs,express,flutter" />
+</p>
+
+### Data, AI & Analytics
+<p>
+  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pandas,numpy" />
+</p>
+
+### DevOps & Cloud
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,linux,docker,aws,firebase" />
 </p>
 
 ---
 
-<h3 align="center">📈 GitHub Stats</h3>
+## 📊 GitHub Analytics
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&theme=default" alt="puoch1of1 stats" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true" />
+  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true" />
 </p>
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=puoch1of1&layout=compact&langs_count=6" alt="Top Languages" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
 
-<h3 align="center">🏆 GitHub Trophies</h3>
+## 🐍 Contribution Snake
+
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=puoch1of1&margin-w=5&no-frame=true" />
+  <img src="https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.svg" />
+</p>
+
+> Powered by a GitHub Action that turns commits into a moving organism.  
+> Evolution, but make it version-controlled.
+
+---
+
+## 🌍 Connect With Me
+
+<p align="center">
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN">
+    <img src="https://skillicons.dev/icons?i=linkedin" />
+  </a>
+  <a href="https://twitter.com/YOUR_TWITTER">
+    <img src="https://skillicons.dev/icons?i=twitter" />
+  </a>
+  <a href="https://YOUR_PORTFOLIO_URL">
+    <img src="https://skillicons.dev/icons?i=vercel" />
+  </a>
+</p>
+
+---
+
+## ✨ Extras
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile%20Views&color=0ea5e9&style=flat" />
+</p>
+
+---
+
+<p align="center">
+  <strong>Building quietly. Thinking deeply. Shipping relentlessly.</strong>
 </p>
