@@ -69,20 +69,21 @@ Great code clarifies reality.
 ## 📊 GitHub Analytics
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&theme=tokyonight&hide_border=true" />
+  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=puoch1of1&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
+
 
 ---
 
 ## 🐍 Contribution Snake
 
 <p align="center">
-  <img src="https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.svg" />
+  <img src="https://github.com/puoch1of1/puoch1of1/blob/output/github-contribution-grid-snake.svg" />
 </p>
 
 > Powered by a GitHub Action that turns commits into a moving organism.  
@@ -93,14 +94,11 @@ Great code clarifies reality.
 ## 🌍 Connect With Me
 
 <p align="center">
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN">
+  <a href="https://linkedin.com/in/www.linkedin.com/in/puoch-mabor-makuei-490252320">
     <img src="https://skillicons.dev/icons?i=linkedin" />
   </a>
-  <a href="https://twitter.com/YOUR_TWITTER">
-    <img src="https://skillicons.dev/icons?i=twitter" />
-  </a>
   <a href="https://YOUR_PORTFOLIO_URL">
-    <img src="https://skillicons.dev/icons?i=vercel" />
+    <img src="https://puochmabormakuei.com" />
   </a>
 </p>
 
