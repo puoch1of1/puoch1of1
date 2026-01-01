@@ -83,7 +83,7 @@ Great code clarifies reality.
 ## 🐍 Contribution Snake
 
 <p align="center">
-  <img src="https://github.com/puoch1of1/puoch1of1/blob/output/github-contribution-grid-snake.svg" />
+  <img src="https://github.com/puoch1of1/puoch1of1/blob/output/github-contribution-grid-snake-dark.svg" />
 </p>
 
 > Powered by a GitHub Action that turns commits into a moving organism.  
