@@ -70,7 +70,7 @@ Great code clarifies reality.
 
 <p align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="GitHub Stats" />
-  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=puoch1of1&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="GitHub Streak" />
+  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=puoch1of1&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </p>
 
 <p align="center">
@@ -94,11 +94,8 @@ Great code clarifies reality.
 ## 🌍 Connect With Me
 
 <p align="center">
-  <a href="https://linkedin.com/in/www.linkedin.com/in/puoch-mabor-makuei-490252320">
-    <img src="https://skillicons.dev/icons?i=linkedin" />
-  </a>
-  <a href="https://YOUR_PORTFOLIO_URL">
-    <img src="https://puochmabormakuei.com" />
+  <a href="https://linkedin.com/in/puoch-mabor-makuei-490252320">
+    <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
   </a>
 </p>
 
@@ -111,7 +108,7 @@ Great code clarifies reality.
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile%20Views&color=0ea5e9&style=flat" />
+  <img src="https://komarev.com/ghpvc/?username=puoch1of1&label=Profile%20Views&color=0ea5e9&style=flat" alt="Profile Views" />
 </p>
 
 ---
