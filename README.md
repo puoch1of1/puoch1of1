@@ -69,12 +69,12 @@ Great code clarifies reality.
 ## 📊 GitHub Analytics
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=puoch1of1&theme=tokyonight&hide_border=true" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="GitHub Stats" />
+  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=puoch1of1&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="Top Languages" />
 </p>
 
 
@@ -83,7 +83,7 @@ Great code clarifies reality.
 ## 🐍 Contribution Snake
 
 <p align="center">
-  <img src="https://github.com/puoch1of1/puoch1of1/blob/output/github-contribution-grid-snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" />
 </p>
 
 > Powered by a GitHub Action that turns commits into a moving organism.  
