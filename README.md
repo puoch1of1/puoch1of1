@@ -70,21 +70,21 @@ Great code clarifies reality.
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true"
+    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-stats.svg"
     alt="GitHub Stats"
   />
 </p>
 
 <p align="center">
   <img
-    src="https://github-readme-streak-stats.herokuapp.com?user=puoch1of1&theme=tokyonight&hide_border=true"
+    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-streak.svg"
     alt="GitHub Streak"
   />
 </p>
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"
+    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg"
     alt="Top Languages"
   />
 </p>

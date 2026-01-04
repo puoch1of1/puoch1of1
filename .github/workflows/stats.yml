@@ -1,0 +1,102 @@
+name: Generate GitHub Analytics SVGs
+
+on:
+  schedule:
+    # Run every 6 hours (4 times daily)
+    - cron: "0 0,6,12,18 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl jq
+
+      - name: Create dist directory
+        run: mkdir -p dist
+
+      # GitHub Stats Card
+      - name: Generate GitHub Stats SVG
+        run: |
+          curl -s "https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" \
+            -o dist/github-stats.svg \
+            -H "User-Agent: Mozilla/5.0"
+          
+          # Verify SVG was generated and is not an error page
+          if grep -q "error\|Error\|ERROR" dist/github-stats.svg 2>/dev/null; then
+            echo "⚠️ Stats generation may have failed"
+            cat dist/github-stats.svg
+            exit 1
+          fi
+          echo "✅ GitHub Stats SVG generated"
+
+      # GitHub Streak Stats Card
+      - name: Generate Streak Stats SVG
+        run: |
+          curl -s "https://github-readme-streak-stats.herokuapp.com?user=puoch1of1&theme=tokyonight&hide_border=true" \
+            -o dist/github-streak.svg \
+            -H "User-Agent: Mozilla/5.0"
+          
+          if grep -q "error\|Error\|ERROR" dist/github-streak.svg 2>/dev/null; then
+            echo "⚠️ Streak generation may have failed"
+            cat dist/github-streak.svg
+            exit 1
+          fi
+          echo "✅ Streak Stats SVG generated"
+
+      # Top Languages Card
+      - name: Generate Top Languages SVG
+        run: |
+          curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" \
+            -o dist/github-top-langs.svg \
+            -H "User-Agent: Mozilla/5.0"
+          
+          if grep -q "error\|Error\|ERROR" dist/github-top-langs.svg 2>/dev/null; then
+            echo "⚠️ Top Languages generation may have failed"
+            cat dist/github-top-langs.svg
+            exit 1
+          fi
+          echo "✅ Top Languages SVG generated"
+
+      # List generated files
+      - name: List generated SVGs
+        run: |
+          echo "Generated SVG files:"
+          ls -lh dist/
+          echo ""
+          echo "SVG file sizes and validity:"
+          for file in dist/*.svg; do
+            size=$(wc -c < "$file")
+            lines=$(wc -l < "$file")
+            echo "$file: $size bytes, $lines lines"
+          done
+
+      # Push to output branch
+      - name: Push analytics to output branch
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          source-directory: 'dist'
+          destination-github-username: 'puoch1of1'
+          destination-repository-name: 'puoch1of1'
+          user-email: 'action@github.com'
+          user-name: 'GitHub Actions'
+          target-branch: output
+          create-target-branch: true
+
+      - name: Workflow Status
+        run: echo "✅ GitHub Analytics SVGs generated and pushed successfully"
