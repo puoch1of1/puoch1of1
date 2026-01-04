@@ -17,13 +17,6 @@ jobs:
       
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl jq
 
       - name: Create dist directory
         run: mkdir -p dist
@@ -35,13 +28,17 @@ jobs:
             -o dist/github-stats.svg \
             -H "User-Agent: Mozilla/5.0"
           
-          # Verify SVG was generated and is not an error page
-          if grep -q "error\|Error\|ERROR" dist/github-stats.svg 2>/dev/null; then
-            echo "⚠️ Stats generation may have failed"
+          # Verify SVG was generated and is not empty or error
+          if [ ! -s dist/github-stats.svg ]; then
+            echo "❌ Stats SVG is empty"
+            exit 1
+          fi
+          if grep -qi "error" dist/github-stats.svg; then
+            echo "❌ Stats generation returned error"
             cat dist/github-stats.svg
             exit 1
           fi
-          echo "✅ GitHub Stats SVG generated"
+          echo "✅ GitHub Stats SVG generated ($(wc -c < dist/github-stats.svg) bytes)"
 
       # GitHub Streak Stats Card
       - name: Generate Streak Stats SVG
@@ -50,12 +47,16 @@ jobs:
             -o dist/github-streak.svg \
             -H "User-Agent: Mozilla/5.0"
           
-          if grep -q "error\|Error\|ERROR" dist/github-streak.svg 2>/dev/null; then
-            echo "⚠️ Streak generation may have failed"
+          if [ ! -s dist/github-streak.svg ]; then
+            echo "❌ Streak SVG is empty"
+            exit 1
+          fi
+          if grep -qi "error" dist/github-streak.svg; then
+            echo "❌ Streak generation returned error"
             cat dist/github-streak.svg
             exit 1
           fi
-          echo "✅ Streak Stats SVG generated"
+          echo "✅ Streak Stats SVG generated ($(wc -c < dist/github-streak.svg) bytes)"
 
       # Top Languages Card
       - name: Generate Top Languages SVG
@@ -64,68 +65,48 @@ jobs:
             -o dist/github-top-langs.svg \
             -H "User-Agent: Mozilla/5.0"
           
-          if grep -q "error\|Error\|ERROR" dist/github-top-langs.svg 2>/dev/null; then
-            echo "⚠️ Top Languages generation may have failed"
+          if [ ! -s dist/github-top-langs.svg ]; then
+            echo "❌ Top Languages SVG is empty"
+            exit 1
+          fi
+          if grep -qi "error" dist/github-top-langs.svg; then
+            echo "❌ Top Languages generation returned error"
             cat dist/github-top-langs.svg
             exit 1
           fi
-          echo "✅ Top Languages SVG generated"
+          echo "✅ Top Languages SVG generated ($(wc -c < dist/github-top-langs.svg) bytes)"
 
-      # List generated files
-      - name: List generated SVGs
+      # List and verify all SVGs
+      - name: Verify generated SVGs
         run: |
-          echo "Generated SVG files:"
+          echo "📊 Generated Analytics SVGs:"
           ls -lh dist/
           echo ""
-          echo "SVG file sizes and validity:"
-          for file in dist/*.svg; do
-            size=$(wc -c < "$file")
-            lines=$(wc -l < "$file")
-            echo "$file: $size bytes, $lines lines"
+          echo "Checking SVG validity..."
+          for svg in dist/*.svg; do
+            if grep -q "<svg" "$svg"; then
+              echo "✅ $svg is valid SVG"
+            else
+              echo "❌ $svg is NOT a valid SVG"
+              exit 1
+            fi
           done
 
-      # Configure git
-      - name: Configure git
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Actions"
+      # Deploy SVGs to output branch
+      - name: Deploy to output branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: output
+          clean: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update GitHub Analytics SVGs [skip ci]"
+          single-commit: true
 
-      # Fetch output branch or create it
-      - name: Fetch or create output branch
+      - name: Workflow completion
         run: |
-          git fetch origin output 2>/dev/null || echo "Output branch doesn't exist yet, will create"
-
-      # Push to output branch using native git
-      - name: Push SVGs to output branch
-        run: |
-          # Create a temporary directory for output branch
-          mkdir -p /tmp/output-branch
-          cd /tmp/output-branch
-          
-          # Clone the repository with only output branch (or create orphan if new)
-          git clone --depth 1 --branch output https://github.com/puoch1of1/puoch1of1.git . 2>/dev/null || {
-            # If output branch doesn't exist, create it as orphan
-            git init
-            git remote add origin https://github.com/puoch1of1/puoch1of1.git
-            git checkout --orphan output
-          }
-          
-          # Copy new SVG files
-          cp "$GITHUB_WORKSPACE/dist"/*.svg .
-          
-          # Add and commit
-          git add *.svg
-          
-          # Check if there are changes
-          if git diff --cached --quiet; then
-            echo "ℹ️ No changes to commit"
-          else
-            git commit -m "Update GitHub Analytics SVGs: stats, streak, top-langs [skip ci]"
-            git push origin output
-            echo "✅ SVGs pushed to output branch"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Workflow Status
-        run: echo "✅ GitHub Analytics SVGs generated and pushed successfully"
+          echo "✅ Workflow completed successfully"
+          echo "SVGs are now available at:"
+          echo "  - https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-stats.svg"
+          echo "  - https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-streak.svg"
+          echo "  - https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg"
