@@ -84,19 +84,48 @@ jobs:
             echo "$file: $size bytes, $lines lines"
           done
 
-      # Push to output branch
-      - name: Push analytics to output branch
-        uses: cpina/github-action-push-to-another-repository@main
+      # Configure git
+      - name: Configure git
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Actions"
+
+      # Fetch output branch or create it
+      - name: Fetch or create output branch
+        run: |
+          git fetch origin output 2>/dev/null || echo "Output branch doesn't exist yet, will create"
+
+      # Push to output branch using native git
+      - name: Push SVGs to output branch
+        run: |
+          # Create a temporary directory for output branch
+          mkdir -p /tmp/output-branch
+          cd /tmp/output-branch
+          
+          # Clone the repository with only output branch (or create orphan if new)
+          git clone --depth 1 --branch output https://github.com/puoch1of1/puoch1of1.git . 2>/dev/null || {
+            # If output branch doesn't exist, create it as orphan
+            git init
+            git remote add origin https://github.com/puoch1of1/puoch1of1.git
+            git checkout --orphan output
+          }
+          
+          # Copy new SVG files
+          cp "$GITHUB_WORKSPACE/dist"/*.svg .
+          
+          # Add and commit
+          git add *.svg
+          
+          # Check if there are changes
+          if git diff --cached --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            git commit -m "Update GitHub Analytics SVGs: stats, streak, top-langs [skip ci]"
+            git push origin output
+            echo "✅ SVGs pushed to output branch"
+          fi
         env:
-          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          source-directory: 'dist'
-          destination-github-username: 'puoch1of1'
-          destination-repository-name: 'puoch1of1'
-          user-email: 'action@github.com'
-          user-name: 'GitHub Actions'
-          target-branch: output
-          create-target-branch: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Workflow Status
         run: echo "✅ GitHub Analytics SVGs generated and pushed successfully"
