@@ -21,22 +21,27 @@ jobs:
       - name: Create dist directory
         run: mkdir -p dist
 
-      # GitHub Stats Card
+      # GitHub Stats Card - Try primary service first, fallback to alternate
       - name: Generate GitHub Stats SVG
+        continue-on-error: true
         run: |
           max_attempts=3
           attempt=1
-          while [ $attempt -le $max_attempts ]; do
-            echo "Attempt $attempt/$max_attempts..."
+          success=false
+          
+          # Try primary service (github-readme-stats)
+          while [ $attempt -le $max_attempts ] && [ "$success" = false ]; do
+            echo "Attempt $attempt/$max_attempts for github-readme-stats..."
             curl -s "https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" \
               -o dist/github-stats.svg \
               -H "User-Agent: Mozilla/5.0" \
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-stats.svg ] && ! grep -qi "deployment\|unavailable\|error" dist/github-stats.svg 2>/dev/null; then
+            if [ -s dist/github-stats.svg ] && grep -q "<svg" dist/github-stats.svg 2>/dev/null && ! grep -qi "deployment\|unavailable\|error\|503\|500" dist/github-stats.svg 2>/dev/null; then
               echo "✅ GitHub Stats SVG generated ($(wc -c < dist/github-stats.svg) bytes)"
-              exit 0
+              success=true
+              break
             fi
             
             if [ $attempt -lt $max_attempts ]; then
@@ -46,16 +51,35 @@ jobs:
             ((attempt++))
           done
           
-          echo "⚠️ Stats service unavailable after $max_attempts attempts"
-          echo "This is expected if vercel.app is under maintenance"
-          exit 0
+          if [ "$success" = false ]; then
+            echo "⚠️ Primary stats service unavailable"
+            # Try alternate service
+            echo "Trying alternate service: github-readme-stats-git-masterrstaa-rickstaa.vercel.app"
+            curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=puoch1of1&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" \
+              -o dist/github-stats.svg \
+              -H "User-Agent: Mozilla/5.0" \
+              --connect-timeout 10 \
+              --max-time 30
+            
+            if [ -s dist/github-stats.svg ] && grep -q "<svg" dist/github-stats.svg; then
+              echo "✅ Stats generated via alternate service"
+              success=true
+            fi
+          fi
+          
+          if [ "$success" = false ]; then
+            echo "⚠️ All stats services unavailable - keeping existing SVG"
+          fi
 
       # GitHub Streak Stats Card
       - name: Generate Streak Stats SVG
+        continue-on-error: true
         run: |
           max_attempts=3
           attempt=1
-          while [ $attempt -le $max_attempts ]; do
+          success=false
+          
+          while [ $attempt -le $max_attempts ] && [ "$success" = false ]; do
             echo "Attempt $attempt/$max_attempts..."
             curl -s "https://github-readme-streak-stats.herokuapp.com?user=puoch1of1&theme=tokyonight&hide_border=true" \
               -o dist/github-streak.svg \
@@ -63,9 +87,10 @@ jobs:
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-streak.svg ] && ! grep -qi "error\|dyno\|unavailable" dist/github-streak.svg 2>/dev/null; then
+            if [ -s dist/github-streak.svg ] && grep -q "<svg" dist/github-streak.svg 2>/dev/null && ! grep -qi "error\|dyno\|unavailable\|503\|500" dist/github-streak.svg 2>/dev/null; then
               echo "✅ Streak Stats SVG generated ($(wc -c < dist/github-streak.svg) bytes)"
-              exit 0
+              success=true
+              break
             fi
             
             if [ $attempt -lt $max_attempts ]; then
@@ -75,15 +100,30 @@ jobs:
             ((attempt++))
           done
           
-          echo "⚠️ Streak service unavailable after $max_attempts attempts"
-          exit 0
+          if [ "$success" = false ]; then
+            echo "⚠️ Streak service unavailable - trying alternate endpoint"
+            curl -s "https://streak-stats.demolab.com?user=puoch1of1&theme=tokyonight&hide_border=true" \
+              -o dist/github-streak.svg \
+              -H "User-Agent: Mozilla/5.0" \
+              --connect-timeout 10 \
+              --max-time 30
+            
+            if [ -s dist/github-streak.svg ] && grep -q "<svg" dist/github-streak.svg; then
+              echo "✅ Streak generated via alternate service"
+            else
+              echo "⚠️ All streak services unavailable - keeping existing SVG"
+            fi
+          fi
 
       # Top Languages Card
       - name: Generate Top Languages SVG
+        continue-on-error: true
         run: |
           max_attempts=3
           attempt=1
-          while [ $attempt -le $max_attempts ]; do
+          success=false
+          
+          while [ $attempt -le $max_attempts ] && [ "$success" = false ]; do
             echo "Attempt $attempt/$max_attempts..."
             curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" \
               -o dist/github-top-langs.svg \
@@ -91,9 +131,10 @@ jobs:
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-top-langs.svg ] && ! grep -qi "deployment\|unavailable\|error" dist/github-top-langs.svg 2>/dev/null; then
+            if [ -s dist/github-top-langs.svg ] && grep -q "<svg" dist/github-top-langs.svg 2>/dev/null && ! grep -qi "deployment\|unavailable\|error\|503\|500" dist/github-top-langs.svg 2>/dev/null; then
               echo "✅ Top Languages SVG generated ($(wc -c < dist/github-top-langs.svg) bytes)"
-              exit 0
+              success=true
+              break
             fi
             
             if [ $attempt -lt $max_attempts ]; then
@@ -103,27 +144,39 @@ jobs:
             ((attempt++))
           done
           
-          echo "⚠️ Languages service unavailable after $max_attempts attempts"
-          exit 0
-
-      # List and verify all SVGs
-      - name: Verify generated SVGs
-        run: |
-          echo "📊 Generated Analytics SVGs:"
-          ls -lh dist/
-          echo ""
-          echo "Checking SVG validity..."
-          for svg in dist/*.svg; do
-            if grep -q "<svg" "$svg"; then
-              echo "✅ $svg is valid SVG"
+          if [ "$success" = false ]; then
+            echo "⚠️ Languages service unavailable - trying alternate"
+            curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" \
+              -o dist/github-top-langs.svg \
+              -H "User-Agent: Mozilla/5.0" \
+              --connect-timeout 10 \
+              --max-time 30
+            
+            if [ -s dist/github-top-langs.svg ] && grep -q "<svg" dist/github-top-langs.svg; then
+              echo "✅ Languages generated via alternate service"
             else
-              echo "❌ $svg is NOT a valid SVG"
-              exit 1
+              echo "⚠️ All languages services unavailable - keeping existing SVG"
             fi
-          done
+          fi
 
-      # Deploy SVGs to output branch
+      # Verify at least some SVGs exist
+      - name: Check SVG files
+        run: |
+          echo "📊 Checking for SVG files in dist/:"
+          ls -lh dist/ || echo "No files in dist/"
+          
+          svg_count=$(find dist/ -name "*.svg" 2>/dev/null | wc -l)
+          echo "Found $svg_count SVG files"
+          
+          if [ $svg_count -eq 0 ]; then
+            echo "⚠️ No SVGs generated - workflow will skip deployment"
+            echo "This is normal if all external services are down"
+            exit 0
+          fi
+
+      # Deploy SVGs to output branch (only if we have SVGs)
       - name: Deploy to output branch
+        if: success()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
@@ -135,8 +188,8 @@ jobs:
 
       - name: Workflow completion
         run: |
-          echo "✅ Workflow completed successfully"
-          echo "SVGs are now available at:"
+          echo "✅ Workflow completed"
+          echo "SVGs available at:"
           echo "  - https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-stats.svg"
           echo "  - https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-streak.svg"
           echo "  - https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg"
