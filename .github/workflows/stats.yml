@@ -35,33 +35,33 @@ jobs:
             curl -s "https://github-readme-stats.vercel.app/api?username=puoch1of1&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" \
               -o dist/github-stats.svg \
               -H "User-Agent: Mozilla/5.0" \
+              -H "Accept: image/svg+xml" \
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-stats.svg ] && grep -q "<svg" dist/github-stats.svg 2>/dev/null && ! grep -qi "deployment\|unavailable\|error\|503\|500" dist/github-stats.svg 2>/dev/null; then
+            if [ -s dist/github-stats.svg ] && grep -q "^<svg" dist/github-stats.svg 2>/dev/null && ! grep -qi "doctype\|html\|head\|body\|authentication" dist/github-stats.svg 2>/dev/null; then
               echo "✅ GitHub Stats SVG generated ($(wc -c < dist/github-stats.svg) bytes)"
               success=true
               break
             fi
             
             if [ $attempt -lt $max_attempts ]; then
-              echo "⏳ Retrying in 10 seconds..."
-              sleep 10
+              echo "⏳ Retrying in 15 seconds..."
+              sleep 15
             fi
             ((attempt++))
           done
           
           if [ "$success" = false ]; then
-            echo "⚠️ Primary stats service unavailable"
-            # Try alternate service
-            echo "Trying alternate service: github-readme-stats-git-masterrstaa-rickstaa.vercel.app"
-            curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=puoch1of1&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" \
+            echo "⚠️ Primary stats service unavailable or returning HTML"
+            echo "Trying alternate service..."
+            curl -s "https://ghchart.rshah.org/puoch1of1" \
               -o dist/github-stats.svg \
               -H "User-Agent: Mozilla/5.0" \
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-stats.svg ] && grep -q "<svg" dist/github-stats.svg; then
+            if [ -s dist/github-stats.svg ] && grep -q "^<svg" dist/github-stats.svg 2>/dev/null; then
               echo "✅ Stats generated via alternate service"
               success=true
             fi
@@ -123,40 +123,46 @@ jobs:
           attempt=1
           success=false
           
+          # Try primary service
           while [ $attempt -le $max_attempts ] && [ "$success" = false ]; do
             echo "Attempt $attempt/$max_attempts..."
             curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" \
               -o dist/github-top-langs.svg \
               -H "User-Agent: Mozilla/5.0" \
+              -H "Accept: image/svg+xml" \
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-top-langs.svg ] && grep -q "<svg" dist/github-top-langs.svg 2>/dev/null && ! grep -qi "deployment\|unavailable\|error\|503\|500" dist/github-top-langs.svg 2>/dev/null; then
+            if [ -s dist/github-top-langs.svg ] && grep -q "^<svg" dist/github-top-langs.svg 2>/dev/null && ! grep -qi "doctype\|html\|head\|body\|authentication" dist/github-top-langs.svg 2>/dev/null; then
               echo "✅ Top Languages SVG generated ($(wc -c < dist/github-top-langs.svg) bytes)"
               success=true
               break
             fi
             
             if [ $attempt -lt $max_attempts ]; then
-              echo "⏳ Retrying in 10 seconds..."
-              sleep 10
+              echo "⏳ Retrying in 15 seconds..."
+              sleep 15
             fi
             ((attempt++))
           done
           
           if [ "$success" = false ]; then
-            echo "⚠️ Languages service unavailable - trying alternate"
+            echo "⚠️ Languages service unavailable or returning HTML"
+            echo "Trying alternate service..."
             curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" \
               -o dist/github-top-langs.svg \
               -H "User-Agent: Mozilla/5.0" \
               --connect-timeout 10 \
               --max-time 30
             
-            if [ -s dist/github-top-langs.svg ] && grep -q "<svg" dist/github-top-langs.svg; then
+            if [ -s dist/github-top-langs.svg ] && grep -q "^<svg" dist/github-top-langs.svg 2>/dev/null; then
               echo "✅ Languages generated via alternate service"
-            else
-              echo "⚠️ All languages services unavailable - keeping existing SVG"
+              success=true
             fi
+          fi
+          
+          if [ "$success" = false ]; then
+            echo "⚠️ All languages services unavailable - keeping existing SVG"
           fi
 
       # Verify at least some SVGs exist
