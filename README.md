@@ -84,7 +84,7 @@ Great code clarifies reality.
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg"
+    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg?v=1"
     alt="Top Languages"
   />
 </p>
