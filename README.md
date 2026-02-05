@@ -56,12 +56,12 @@ Great code clarifies reality.
 
 ### Data, AI & Analytics
 <p>
-  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pandas,numpy,matplot" />
+  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pandas,numpy" />
 </p>
 
 ### DevOps & Cloud
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,docker,aws,firebase" />
+  <img src="https://skillicons.dev/icons?i=git,github,docker,aws" />
 </p>
 
 ---
