@@ -18,7 +18,7 @@
 <tr>
 <td width="60%">
 
-I’m **Puoch Mabor Makuei**, a Computer Science student and builder from **South Sudan 🇸🇸**, currently based in Uganda.
+I’m **Puoch Mabor Makuei**, a Computer Science student and builder from **South Sudan**, currently based in Uganda.
 
 I specialize in **Data Science, AI systems, and modern web technologies**—the kind that turn raw chaos into structured intelligence.
 
@@ -51,7 +51,7 @@ Great code clarifies reality.
 
 ### Frameworks & Libraries
 <p>
-  <img src="https://skillicons.dev/icons?i=react,nodejs,express,flutter" />
+  <img src="https://skillicons.dev/icons?i=react,nodejs,flutter" />
 </p>
 
 ### Data, AI & Analytics
@@ -61,19 +61,12 @@ Great code clarifies reality.
 
 ### DevOps & Cloud
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,linux,docker,aws,firebase" />
+  <img src="https://skillicons.dev/icons?i=git,github,docker,aws,firebase" />
 </p>
 
 ---
 
 ## 📊 GitHub Analytics
-
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-stats.svg"
-    alt="GitHub Stats"
-  />
-</p>
 
 <p align="center">
   <img
@@ -83,10 +76,7 @@ Great code clarifies reality.
 </p>
 
 <p align="center">
-  <img
-    src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg?v=1"
-    alt="Top Languages"
-  />
+  <img src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg?v=1" alt="Top Languages" />
 </p>
 
 ---
