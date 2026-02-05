@@ -46,7 +46,7 @@ Great code clarifies reality.
 
 ### Languages & Core Tech
 <p>
-  <img src="https://skillicons.dev/icons?i=python,js,sql,html,css,dart" />
+  <img src="https://skillicons.dev/icons?i=python,js,sql,html,css" />
 </p>
 
 ### Frameworks & Libraries
@@ -56,7 +56,7 @@ Great code clarifies reality.
 
 ### Data, AI & Analytics
 <p>
-  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pandas,numpy" />
+  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pandas,numpy,matplot" />
 </p>
 
 ### DevOps & Cloud
