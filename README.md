@@ -20,7 +20,7 @@
 
 I’m **Puoch Mabor Makuei**, a Computer Science student and builder from **South Sudan**, currently based in Uganda.
 
-I specialize in **Data Science, AI systems, and modern web technologies**—the kind that turn raw chaos into structured intelligence.
+I specialize in **Data Science, AI systems, and modern web technologies** the kind that turn raw chaos into structured intelligence.
 
 I care deeply about:
 - Building systems that *actually work*
