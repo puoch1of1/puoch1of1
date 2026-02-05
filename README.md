@@ -1,5 +1,5 @@
 <!-- ========================= -->
-<!-- 🚀 GITHUB PROFILE README -->
+<!--  GITHUB PROFILE README -->
 <!-- ========================= -->
 
 <p align="center">
@@ -12,7 +12,7 @@
 
 ---
 
-## 🧠 About Me
+## About Me
 
 <table>
 <tr>
@@ -66,7 +66,7 @@ Great code clarifies reality.
 
 ---
 
-## 📊 GitHub Analytics
+## GitHub Analytics
 
 <p align="center">
   <img
@@ -76,7 +76,7 @@ Great code clarifies reality.
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-top-langs.svg?v=1" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=puoch1of1&layout=compact&theme=tokyonight" alt="Top Languages" />
 </p>
 
 ---
@@ -92,7 +92,7 @@ Great code clarifies reality.
 
 ---
 
-## 🌍 Connect With Me
+## Connect With Me
 
 <p align="center">
   <a href="https://linkedin.com/in/puoch-mabor-makuei-490252320">
@@ -102,7 +102,7 @@ Great code clarifies reality.
 
 ---
 
-## ✨ Extras
+## Extras
 
 <p align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
