@@ -46,7 +46,7 @@ Great code clarifies reality.
 
 ### Languages & Core Tech
 <p>
-  <img src="https://skillicons.dev/icons?i=python,js,sql,html,css" />
+  <img src="https://skillicons.dev/icons?i=python,js,mysql,html,css" />
 </p>
 
 ### Frameworks & Libraries
