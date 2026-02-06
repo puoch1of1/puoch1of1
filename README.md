@@ -3,7 +3,7 @@
 <!-- ========================= -->
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=28&pause=1000&color=38BDF8&center=true&vCenter=true&width=800&lines=Hi%2C+I'm+Puoch+Mabor+Makuei;I+build+with+Data%2C+AI+%26+Code;Turning+Ideas+Into+Systems" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=28&pause=1000&color=38BDF8&center=true&vCenter=true&width=800&lines=Hi%2C+I'm+Puoch+Mabor+Makuei;Data+Engineer+%7C+Pipeline+Architect;Building+Scalable+Data+Infrastructure" />
 </p>
 
 <p align="center">
@@ -18,18 +18,18 @@
 <tr>
 <td width="60%">
 
-I’m **Puoch Mabor Makuei**, a Computer Science student and builder from **South Sudan**, currently based in Uganda.
+I'm **Puoch Mabor Makuei**, a Computer Science student and data engineer from **South Sudan**, currently based in Uganda.
 
-I specialize in **Data Science, AI systems, and modern web technologies** the kind that turn raw chaos into structured intelligence.
+I specialize in **Data Engineering, ETL pipelines, and scalable data infrastructure** — building systems that transform raw data into actionable insights at scale.
 
 I care deeply about:
-- Building systems that *actually work*
-- Clean architecture over clever hacks
-- Using technology to solve **African-scale problems**
+- Building robust data pipelines that handle **real-world complexity**
+- Clean, maintainable data architecture over quick fixes
+- Using data engineering to solve **African-scale problems**
 
-I believe code is a thinking tool.  
-Bad code confuses computers.  
-Great code clarifies reality.
+I believe data pipelines are the nervous system of modern organizations.  
+Bad pipelines create data swamps.  
+Great pipelines create data clarity.
 
 </td>
 <td width="40%" align="center">
@@ -54,9 +54,13 @@ Great code clarifies reality.
   <img src="https://skillicons.dev/icons?i=react,nodejs,flutter" />
 </p>
 
-### Data, AI & Analytics
+### Data Engineering & Analytics
 <p>
-  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pandas,numpy" />
+  <img src="https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" />
+  <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
 </p>
 
 ### DevOps & Cloud
@@ -118,5 +122,5 @@ Great code clarifies reality.
 ---
 
 <p align="center">
-  <strong>Building quietly. Thinking deeply. Shipping relentlessly.</strong>
+  <strong>Engineering data pipelines. Building at scale. Transforming chaos into clarity.</strong>
 </p>
