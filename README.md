@@ -20,7 +20,7 @@
 
 I'm **Puoch Mabor Makuei**, a Computer Science student and data engineer from **South Sudan**, currently based in Uganda.
 
-I specialize in **Data Engineering, ETL pipelines, and scalable data infrastructure** — building systems that transform raw data into actionable insights at scale.
+I specialize in **Data Engineering, ETL pipelines, and scalable data infrastructure** building systems that transform raw data into actionable insights at scale.
 
 I care deeply about:
 - Building robust data pipelines that handle **real-world complexity**
