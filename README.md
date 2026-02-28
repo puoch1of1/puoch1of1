@@ -103,8 +103,9 @@ Great pipelines create data clarity.
   <img src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" />
 </p>
 
-> Powered by a GitHub Action that turns commits into a moving organism.  
-> Evolution, but make it version-controlled.
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,25:38bdf8,50:7dd3fc,75:38bdf8,100:0ea5e9&height=110&section=header" width="100%" alt="Water Wave Animation" />
+</p>
 
 ---
 
