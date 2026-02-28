@@ -1,45 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Minimal dark dragon gliding horizontally">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Refined minimal line-art dragon on dark background">
   <defs>
-    <linearGradient id="dragonStroke" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.55"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.55"/>
+    <linearGradient id="dragonLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0b5f73" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0b5f73" stop-opacity="0.6"/>
     </linearGradient>
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="eyeGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.2" result="eyeBlur"/>
+      <feMerge>
+        <feMergeNode in="eyeBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <g opacity="0.85">
-    <path d="M0 84 C130 77, 240 90, 360 84 C490 78, 610 90, 740 84 C870 77, 980 90, 1105 84 C1140 84, 1170 84, 1200 84"
-      fill="none" stroke="#0b2233" stroke-opacity="0.35" stroke-width="2"/>
+  <rect width="1200" height="110" fill="#02060c"/>
+
+  <g opacity="0.28">
+    <path d="M0 86 C130 82, 260 90, 390 86 C520 82, 650 90, 780 86 C910 82, 1040 90, 1200 86"
+      fill="none" stroke="#0e2230" stroke-width="1.7"/>
   </g>
 
-  <g filter="url(#softGlow)">
-    <g>
-      <path d="M250 74 C330 44, 430 46, 500 67 C560 84, 628 87, 705 74"
-        fill="none" stroke="url(#dragonStroke)" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M500 67 C533 60, 560 48, 575 36 C557 37, 546 31, 541 24 C535 31, 523 41, 503 46"
-        fill="none" stroke="url(#dragonStroke)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M562 40 L586 28" fill="none" stroke="#7dd3fc" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round"/>
-      <path d="M552 36 L575 20" fill="none" stroke="#7dd3fc" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M546 62 C531 74, 521 82, 514 92" fill="none" stroke="#38bdf8" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round"/>
+  <g filter="url(#cyanGlow)">
+    <path d="M270 70 C355 50, 445 50, 520 64 C560 71, 590 72, 628 67"
+      fill="none" stroke="url(#dragonLine)" stroke-width="2.2" stroke-linecap="round"/>
 
-      <circle cx="558" cy="43" r="2.5" fill="#dbeafe" opacity="0.95"/>
-      <circle cx="559" cy="43" r="1.2" fill="#020617">
-        <animate attributeName="cx" values="559;561;559;557;559" dur="6s" repeatCount="indefinite"/>
+    <path d="M520 64 C540 58, 556 49, 566 40 C552 40, 544 36, 540 30 C535 36, 525 45, 510 50"
+      fill="none" stroke="url(#dragonLine)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M556 41 L574 30" fill="none" stroke="#67e8f9" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M548 37 L565 25" fill="none" stroke="#67e8f9" stroke-opacity="0.5" stroke-width="1.2" stroke-linecap="round"/>
+
+    <g filter="url(#eyeGlow)">
+      <circle cx="550" cy="45" r="1.4" fill="#a5f3fc" opacity="0.85">
+        <animate attributeName="opacity" values="0.55;0.95;0.55" dur="4s" repeatCount="indefinite"/>
       </circle>
+      <circle cx="550" cy="45" r="3.4" fill="#22d3ee" opacity="0.15"/>
+    </g>
 
+    <g>
+      <path d="M360 67 C315 72, 285 79, 262 88"
+        fill="none" stroke="url(#dragonLine)" stroke-width="2" stroke-linecap="round"/>
       <animateTransform
         attributeName="transform"
-        type="translate"
-        values="-18 0;-6 -1;12 0;6 1;-18 0"
+        type="rotate"
+        values="0 360 67;4 360 67;0 360 67;-4 360 67;0 360 67"
         dur="8s"
         repeatCount="indefinite"/>
+    </g>
+
+    <g opacity="0.8">
+      <circle cx="575" cy="43" r="0" fill="#67e8f9" opacity="0">
+        <animate attributeName="r" values="0;0;1.8;2.7;0" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="575;575;581;589;596" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="43;43;39;35;31" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0.45;0.25;0" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="579" cy="45" r="0" fill="#a5f3fc" opacity="0">
+        <animate attributeName="r" values="0;0;1.2;2.1;0" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="579;579;584;591;598" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="45;45;41;36;32" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0.32;0.18;0" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
+      </circle>
     </g>
   </g>
 </svg>
