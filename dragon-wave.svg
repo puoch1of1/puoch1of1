@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Minimal dark dragon gliding horizontally">
+  <defs>
+    <linearGradient id="dragonStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.55"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g opacity="0.85">
+    <path d="M0 84 C130 77, 240 90, 360 84 C490 78, 610 90, 740 84 C870 77, 980 90, 1105 84 C1140 84, 1170 84, 1200 84"
+      fill="none" stroke="#0b2233" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <g>
+      <path d="M250 74 C330 44, 430 46, 500 67 C560 84, 628 87, 705 74"
+        fill="none" stroke="url(#dragonStroke)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M500 67 C533 60, 560 48, 575 36 C557 37, 546 31, 541 24 C535 31, 523 41, 503 46"
+        fill="none" stroke="url(#dragonStroke)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M562 40 L586 28" fill="none" stroke="#7dd3fc" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round"/>
+      <path d="M552 36 L575 20" fill="none" stroke="#7dd3fc" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M546 62 C531 74, 521 82, 514 92" fill="none" stroke="#38bdf8" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round"/>
+
+      <circle cx="558" cy="43" r="2.5" fill="#dbeafe" opacity="0.95"/>
+      <circle cx="559" cy="43" r="1.2" fill="#020617">
+        <animate attributeName="cx" values="559;561;559;557;559" dur="6s" repeatCount="indefinite"/>
+      </circle>
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="-18 0;-6 -1;12 0;6 1;-18 0"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
