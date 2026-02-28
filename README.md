@@ -104,7 +104,7 @@ Great pipelines create data clarity.
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,25:38bdf8,50:7dd3fc,75:38bdf8,100:0ea5e9&height=110&section=header" width="100%" alt="Water Wave Animation" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,25:38bdf8,50:7dd3fc,75:38bdf8,100:0ea5e9&height=110&section=footer" width="100%" alt="Water Wave Animation" />
 </p>
 
 ---
