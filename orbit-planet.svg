@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Minimal orbiting planet animation">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Animated glowing data waveform">
   <defs>
-    <linearGradient id="spaceBg" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#02060d"/>
-      <stop offset="50%" stop-color="#040b16"/>
+      <stop offset="50%" stop-color="#030b18"/>
       <stop offset="100%" stop-color="#02060d"/>
     </linearGradient>
-    <radialGradient id="planetFill" cx="35%" cy="30%" r="75%">
-      <stop offset="0%" stop-color="#9be7ff" stop-opacity="0.9"/>
-      <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0.95"/>
-    </radialGradient>
-    <filter id="planetGlow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#67e8f9" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-120%" width="140%" height="340%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
@@ -19,67 +19,42 @@
     </filter>
   </defs>
 
-  <rect width="1200" height="110" fill="url(#spaceBg)"/>
+  <rect width="1200" height="110" fill="url(#bg)"/>
 
-  <g opacity="0.55" fill="#67e8f9">
-    <circle cx="120" cy="24" r="0.8">
-      <animate attributeName="cy" values="24;29;24" dur="7s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="250" cy="78" r="0.9">
-      <animate attributeName="cx" values="250;260;250" dur="8s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="430" cy="30" r="0.75">
-      <animate attributeName="cy" values="30;25;30" dur="6.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="620" cy="84" r="0.8">
-      <animate attributeName="cx" values="620;610;620" dur="7.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="800" cy="26" r="0.9">
-      <animate attributeName="cy" values="26;32;26" dur="9s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="980" cy="74" r="0.85">
-      <animate attributeName="cx" values="980;990;980" dur="8.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1090" cy="40" r="0.8">
-      <animate attributeName="cy" values="40;35;40" dur="7s" repeatCount="indefinite"/>
-    </circle>
+  <g stroke="#0f2233" stroke-opacity="0.45" stroke-width="1">
+    <line x1="0" y1="42" x2="1200" y2="42"/>
+    <line x1="0" y1="55" x2="1200" y2="55"/>
+    <line x1="0" y1="68" x2="1200" y2="68"/>
   </g>
 
-  <g transform="translate(600 55)">
-    <ellipse cx="0" cy="0" rx="88" ry="22" fill="none" stroke="#22d3ee" stroke-opacity="0.22" stroke-width="1.4"/>
-
-    <g>
-      <circle cx="0" cy="0" r="20" fill="#67e8f9" opacity="0.55" filter="url(#planetGlow)"/>
-      <circle cx="0" cy="0" r="16" fill="url(#planetFill)"/>
-
-      <path d="M-11 -2 C-6 -7, 2 -8, 8 -5 C4 -2, -2 -1, -8 1 C-10 2, -11 0, -11 -2Z" fill="#a5f3fc" fill-opacity="0.28"/>
-      <path d="M-4 6 C1 4, 6 4, 10 7 C6 9, 1 10, -3 9 C-5 8, -6 7, -4 6Z" fill="#0e7490" fill-opacity="0.36"/>
-
-      <animateTransform
-        attributeName="transform"
-        type="rotate"
-        values="0 0 0;360 0 0"
-        dur="28s"
-        repeatCount="indefinite"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <g opacity="0.95">
+      <path d="M-300 55 C-260 35 -220 75 -180 55 C-140 35 -100 75 -60 55 C-20 35 20 75 60 55 C100 35 140 75 180 55 C220 35 260 75 300 55 C340 35 380 75 420 55 C460 35 500 75 540 55 C580 35 620 75 660 55 C700 35 740 75 780 55 C820 35 860 75 900 55 C940 35 980 75 1020 55 C1060 35 1100 75 1140 55 C1180 35 1220 75 1260 55 C1300 35 1340 75 1380 55 C1420 35 1460 75 1500 55"
+        stroke="url(#wave)" stroke-width="2.3">
+        <animateTransform attributeName="transform" type="translate" values="0 0;300 0" dur="7.5s" repeatCount="indefinite"/>
+      </path>
     </g>
 
-    <g opacity="0.9">
-      <circle cx="88" cy="0" r="1.6" fill="#a5f3fc">
-        <animateTransform
-          attributeName="transform"
-          type="rotate"
-          values="0 0 0;360 0 0"
-          dur="11s"
-          repeatCount="indefinite"/>
-      </circle>
-      <circle cx="-88" cy="0" r="1.2" fill="#67e8f9" opacity="0.75">
-        <animateTransform
-          attributeName="transform"
-          type="rotate"
-          values="0 0 0;360 0 0"
-          dur="11s"
-          repeatCount="indefinite"/>
-      </circle>
+    <g opacity="0.45">
+      <path d="M-300 55 C-260 47 -220 63 -180 55 C-140 47 -100 63 -60 55 C-20 47 20 63 60 55 C100 47 140 63 180 55 C220 47 260 63 300 55 C340 47 380 63 420 55 C460 47 500 63 540 55 C580 47 620 63 660 55 C700 47 740 63 780 55 C820 47 860 63 900 55 C940 47 980 63 1020 55 C1060 47 1100 63 1140 55 C1180 47 1220 63 1260 55 C1300 47 1340 63 1380 55 C1420 47 1460 63 1500 55"
+        stroke="#22d3ee" stroke-width="1.2">
+        <animateTransform attributeName="transform" type="translate" values="0 0;300 0" dur="11s" repeatCount="indefinite"/>
+      </path>
     </g>
+  </g>
+
+  <g fill="#a5f3fc" opacity="0.85">
+    <circle cx="180" cy="55" r="1.2">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="510" cy="55" r="1.2">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="830" cy="55" r="1.2">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1080" cy="55" r="1.2">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
+    </circle>
   </g>
 </svg>
