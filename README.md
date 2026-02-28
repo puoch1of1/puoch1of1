@@ -104,7 +104,7 @@ Great pipelines create data clarity.
 </p>
 
 <p align="center">
-  <img src="./orbit-planet.svg" width="100%" alt="Orbiting Planet Animation" />
+  <img src="./data-wave.svg" width="100%" alt="Data Wave Animation" />
 </p>
 
 ---
