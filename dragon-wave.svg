@@ -1,73 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Refined minimal line-art dragon on dark background">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110" role="img" aria-label="Minimal orbiting planet animation">
   <defs>
-    <linearGradient id="dragonLine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0b5f73" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0b5f73" stop-opacity="0.6"/>
+    <linearGradient id="spaceBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#02060d"/>
+      <stop offset="50%" stop-color="#040b16"/>
+      <stop offset="100%" stop-color="#02060d"/>
     </linearGradient>
-    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+    <radialGradient id="planetFill" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#9be7ff" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0.95"/>
+    </radialGradient>
+    <filter id="planetGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="eyeGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="1.2" result="eyeBlur"/>
-      <feMerge>
-        <feMergeNode in="eyeBlur"/>
+        <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <rect width="1200" height="110" fill="#02060c"/>
+  <rect width="1200" height="110" fill="url(#spaceBg)"/>
 
-  <g opacity="0.28">
-    <path d="M0 86 C130 82, 260 90, 390 86 C520 82, 650 90, 780 86 C910 82, 1040 90, 1200 86"
-      fill="none" stroke="#0e2230" stroke-width="1.7"/>
+  <g opacity="0.55" fill="#67e8f9">
+    <circle cx="120" cy="24" r="0.8">
+      <animate attributeName="cy" values="24;29;24" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="78" r="0.9">
+      <animate attributeName="cx" values="250;260;250" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="430" cy="30" r="0.75">
+      <animate attributeName="cy" values="30;25;30" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="620" cy="84" r="0.8">
+      <animate attributeName="cx" values="620;610;620" dur="7.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="26" r="0.9">
+      <animate attributeName="cy" values="26;32;26" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="980" cy="74" r="0.85">
+      <animate attributeName="cx" values="980;990;980" dur="8.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1090" cy="40" r="0.8">
+      <animate attributeName="cy" values="40;35;40" dur="7s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <g filter="url(#cyanGlow)">
-    <path d="M270 70 C355 50, 445 50, 520 64 C560 71, 590 72, 628 67"
-      fill="none" stroke="url(#dragonLine)" stroke-width="2.2" stroke-linecap="round"/>
-
-    <path d="M520 64 C540 58, 556 49, 566 40 C552 40, 544 36, 540 30 C535 36, 525 45, 510 50"
-      fill="none" stroke="url(#dragonLine)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <path d="M556 41 L574 30" fill="none" stroke="#67e8f9" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M548 37 L565 25" fill="none" stroke="#67e8f9" stroke-opacity="0.5" stroke-width="1.2" stroke-linecap="round"/>
-
-    <g filter="url(#eyeGlow)">
-      <circle cx="550" cy="45" r="1.4" fill="#a5f3fc" opacity="0.85">
-        <animate attributeName="opacity" values="0.55;0.95;0.55" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="550" cy="45" r="3.4" fill="#22d3ee" opacity="0.15"/>
-    </g>
+  <g transform="translate(600 55)">
+    <ellipse cx="0" cy="0" rx="88" ry="22" fill="none" stroke="#22d3ee" stroke-opacity="0.22" stroke-width="1.4"/>
 
     <g>
-      <path d="M360 67 C315 72, 285 79, 262 88"
-        fill="none" stroke="url(#dragonLine)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="20" fill="#67e8f9" opacity="0.55" filter="url(#planetGlow)"/>
+      <circle cx="0" cy="0" r="16" fill="url(#planetFill)"/>
+
+      <path d="M-11 -2 C-6 -7, 2 -8, 8 -5 C4 -2, -2 -1, -8 1 C-10 2, -11 0, -11 -2Z" fill="#a5f3fc" fill-opacity="0.28"/>
+      <path d="M-4 6 C1 4, 6 4, 10 7 C6 9, 1 10, -3 9 C-5 8, -6 7, -4 6Z" fill="#0e7490" fill-opacity="0.36"/>
+
       <animateTransform
         attributeName="transform"
         type="rotate"
-        values="0 360 67;4 360 67;0 360 67;-4 360 67;0 360 67"
-        dur="8s"
+        values="0 0 0;360 0 0"
+        dur="28s"
         repeatCount="indefinite"/>
     </g>
 
-    <g opacity="0.8">
-      <circle cx="575" cy="43" r="0" fill="#67e8f9" opacity="0">
-        <animate attributeName="r" values="0;0;1.8;2.7;0" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="575;575;581;589;596" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="cy" values="43;43;39;35;31" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0;0.45;0.25;0" keyTimes="0;0.78;0.86;0.94;1" dur="6s" repeatCount="indefinite"/>
+    <g opacity="0.9">
+      <circle cx="88" cy="0" r="1.6" fill="#a5f3fc">
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0 0 0;360 0 0"
+          dur="11s"
+          repeatCount="indefinite"/>
       </circle>
-      <circle cx="579" cy="45" r="0" fill="#a5f3fc" opacity="0">
-        <animate attributeName="r" values="0;0;1.2;2.1;0" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="579;579;584;591;598" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="cy" values="45;45;41;36;32" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0;0.32;0.18;0" keyTimes="0;0.8;0.88;0.96;1" dur="6s" repeatCount="indefinite"/>
+      <circle cx="-88" cy="0" r="1.2" fill="#67e8f9" opacity="0.75">
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0 0 0;360 0 0"
+          dur="11s"
+          repeatCount="indefinite"/>
       </circle>
     </g>
   </g>
