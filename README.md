@@ -97,18 +97,6 @@ Great pipelines create data clarity.
 
 ---
 
-## 🐍 Contribution Snake
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/puoch1of1/puoch1of1/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" />
-</p>
-
-<p align="center">
-  <img src="./data-wave.svg" width="100%" alt="Data Wave Animation" />
-</p>
-
----
-
 ## Connect With Me
 
 <p align="center">
